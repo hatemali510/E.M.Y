@@ -57,7 +57,59 @@
   "Feature-service5-2":"Strong understanding of regional markets",
   "Feature-service6-1":"Trusted",
   "Feature-service6-2":"Strong regulatory  governance expertise",
-  "key1":"Ai kalam "
+"marketingMessage": "Marketing Message",
+  "marketingMessageTitle": "Strategic Financial Solutions for Modern Businesses",
+  "marketingMessageDesc": "E.M.Y Financial Source Consulting Services helps companies build strong financial systems and make better strategic decisions through professional financial consulting and outsourcing services.",
+
+  "marketExpansion": "Market Expansion Strategy",
+  "marketExpansionTitle": "Growth Strategy",
+  "marketExpansionDesc1": "Phase 1: Egypt Market – SMEs and startups",
+  "marketExpansionDesc2": "Phase 2: GCC Market – outsourcing and advisory services",
+  "marketExpansionDesc3": "Phase 3: Regional Consulting Firm",
+
+  "financialServices": "Financial Services",
+  "financialServicesTitle": "Comprehensive Financial Services",
+  "financialServicesDesc": "We provide end-to-end financial solutions including CFO advisory, financial planning, budgeting, cash flow management, and financial reporting to support sustainable business growth.",
+
+  "whyChooseUs": "Why Choose Us",
+  "whyChooseUsTitle": "Why Choose E.M.Y Financial Source",
+  "whyChooseUsDesc": "Our expertise, accuracy, and commitment to excellence enable businesses to optimize performance, reduce risks, and achieve long-term financial stability.",
+  "marketingPoint1": "Build scalable and structured financial systems tailored to your business model.",
+  "marketingPoint2": "Transform financial data into actionable insights for better decision-making.",
+  "marketingPoint3": "Enhance operational efficiency through outsourced financial expertise.",
+
+  "financialPoint1": "CFO advisory services to guide strategic financial direction.",
+  "financialPoint2": "Accurate budgeting, forecasting, and cash flow management.",
+  "financialPoint3": "Reliable financial reporting aligned with international standards.",
+
+  "whyPoint1": "Deep industry expertise with a results-driven consulting approach.",
+  "whyPoint2": "High level of accuracy, transparency, and professional integrity.",
+  "whyPoint3": "Customized solutions designed for sustainable business growth.",
+  "contactTitle": "Contact Us",
+  "contactSubtitle": "Get in touch with our team to discuss how we can support your financial growth and strategic goals.",
+
+  "contactAddressTitle": "Address",
+  "contactAddress": "Cairo, Egypt",
+
+  "contactPhoneTitle": "Call Us",
+  "contactPhone": "+20 XXX XXX XXXX",
+
+  "contactEmailTitle": "Email Us",
+  "contactEmail": "info@emyfinancial.com",
+
+  "contactName": "Your Name",
+  "contactEmailInput": "Your Email",
+  "contactSubject": "Subject",
+  "contactMessage": "Your Message",
+
+  "contactLoading": "Sending your message...",
+  "contactSuccess": "Your message has been sent successfully. We will get back to you shortly.",
+  "contactSend": "Send Message"
+  
+  
+
+
+
 
 
 
