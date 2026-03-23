@@ -47,102 +47,92 @@
         <h1 class="sitename">Dewi</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#team">Team</a></li>
+        
+          <li><a href="#contact">Contact</a></li>
+          <li class="dropdown">
+            <span id="current-lang">
+              <img src="assets/img/flags/uk.png" width="20">
+            </span>
+           <ul>
+              <li>
+                <a href="#" onclick="changeLang('en')">
+                  <img src="assets/img/flags/uk.png" width="20"> English
+                </a>
               </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li>
+                <a href="#" onclick="changeLang('ar')">
+                  <img src="assets/img/flags/ksa.png" width="20"> العربية
+                </a>
+              </li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
       <a class="cta-btn" href="index.html#about">Get Started</a>
 
     </div>
   </header>
 
-  <main class="main">
+ <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
-      <div class="container position-relative">
-        <h1>Service Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Service Details</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
+  <!-- Page Title -->
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+    <div class="container position-relative">
+      <h1 data-i18n="serviceDetailsTitle"></h1>
+      <p data-i18n="serviceDetailsSubtitle"></p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html" data-i18n="home"></a></li>
+          <li class="current" data-i18n="serviceDetailsTitle"></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
 
-    <!-- Service Details Section -->
-    <section id="service-details" class="service-details section">
+  <!-- Service Details Section -->
+  <section id="service-details" class="service-details section">
+    <div class="container">
+      <div class="row gy-4">
 
-      <div class="container">
+        <!-- LEFT SIDE -->
+        <div class="col-lg-4">
+          <div class="services-list">
+          <a href="#" class="active" data-service="financial" data-i18n="core1"></a>
+          <a href="#" data-service="cfo" data-i18n="core2"></a>
+          <a href="#" data-service="investment" data-i18n="core3"></a>
+          <a href="#" data-service="audit" data-i18n="core4"></a>
+          <a href="#" data-service="erp" data-i18n="core5"></a>
+        </div>
 
-        <div class="row gy-4">
+          <h4 ></h4>
+          <p ></p>
+        </div>
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="services-list">
-              <a href="#" class="active">Web Design</a>
-              <a href="#">Software Development</a>
-              <a href="#">Product Management</a>
-              <a href="#">Graphic Design</a>
-              <a href="#">Marketing</a>
-            </div>
+        <!-- RIGHT SIDE -->
+        <div class="col-lg-8">
+          <img src="assets/img/services.jpg" class="img-fluid services-img">
 
-            <h4>Enim qui eos rerum in delectus</h4>
-            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
-          </div>
 
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
-            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
-            <p>
-              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
-            </ul>
-            <p>
-              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
-            </p>
-            <p>
-              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
-            </p>
-          </div>
+  <h3 id="service-title"></h3>
+  <p id="service-desc"></p>
 
+  <ul id="service-list"></ul>
+
+</div>
         </div>
 
       </div>
+    </div>
+  </section>
 
-    </section><!-- /Service Details Section -->
-
-  </main>
+</main>
 
   <footer id="footer" class="footer dark-background">
 
@@ -233,6 +223,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
 
 </body>
 
