@@ -78,10 +78,14 @@ async function changeLang(lang) {
   document.body.dir = (lang === "ar") ? "rtl" : "ltr";
   document.body.classList.toggle("arabic", lang === "ar");
 
-  // 🔥 close mobile menu (important for Dewi)
-  document.body.classList.remove("mobile-nav-active");
-  const nav = document.querySelector(".navmenu ul");
-  if (nav) nav.style.display = "none";
+// 🔥 close mobile menu (important for Dewi)
+document.body.classList.remove("mobile-nav-active");
+
+const toggleIcon = document.querySelector(".mobile-nav-toggle");
+if (toggleIcon) {
+  toggleIcon.classList.remove("bi-x");
+  toggleIcon.classList.add("bi-list");
+}
 }
 
 // 🔥 Toggle button
