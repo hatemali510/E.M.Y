@@ -1,16 +1,18 @@
 let translations = {};
-let currentLang = "en";
+let currentLang = localStorage.getItem("lang") || "en";
 let currentService = "financial";
+
+// 🔥 Load translations
 async function loadTranslations(lang) {
-  const response = await fetch(`lang/${lang}.json`);
+  const response = await fetch(`lang/${currentLang}.json`);
   translations = await response.json();
 }
 
-// 🔥 Render function
+// 🔥 Render service
 function renderService(serviceKey) {
-  console.log(serviceKey)
   const data = translations[serviceKey];
-  console.log(data);
+  if (!data) return;
+
   document.getElementById("service-title").textContent = data.title;
   document.getElementById("service-desc").textContent = data.desc;
 
@@ -24,8 +26,7 @@ function renderService(serviceKey) {
   });
 }
 
-
-// 🔥 Click handling
+// 🔥 Click handling (services)
 const links = document.querySelectorAll(".services-list a");
 
 links.forEach(link => {
@@ -40,7 +41,7 @@ links.forEach(link => {
   });
 });
 
-
+// 🔥 Apply static translations
 function applyTranslations() {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
@@ -48,26 +49,52 @@ function applyTranslations() {
   });
 }
 
+// 🔥 Update flag UI
+function updateLangUI() {
+  const flag = document.getElementById("lang-flag");
+  if (!flag) return;
+
+  flag.src = currentLang === "ar"
+    ? "assets/img/flags/ksa.png"
+    : "assets/img/flags/uk.png";
+}
+
+// 🔥 Change language
 async function changeLang(lang) {
+  currentLang = lang;
   localStorage.setItem("lang", lang);
 
   await loadTranslations(lang);
   applyTranslations();
-  renderService("financial");
 
- // Update dropdown label with flag
-  document.getElementById("current-lang").innerHTML =
-    lang === "ar"
-      ? '<img src="assets/img/flags/ksa.png" class="lang-flag">'
-      : '<img src="assets/img/flags/uk.png" class="lang-flag">';
-  // RTL support
+  // ✅ keep current service
+  renderService(currentService);
+
+  // 🔥 update flag
+  updateLangUI();
+
+  // RTL
   document.documentElement.lang = lang;
   document.body.dir = (lang === "ar") ? "rtl" : "ltr";
   document.body.classList.toggle("arabic", lang === "ar");
+
+  // 🔥 close mobile menu (important for Dewi)
+  document.body.classList.remove("mobile-nav-active");
+  const nav = document.querySelector(".navmenu ul");
+  if (nav) nav.style.display = "none";
 }
 
-// Load saved language on start
+// 🔥 Toggle button
+document.addEventListener("click", function (e) {
+  const btn = e.target.closest("#lang-toggle");
+
+  if (btn) {
+    const newLang = currentLang === "en" ? "ar" : "en";
+    changeLang(newLang);
+  }
+});
+
+// 🔥 Initial load
 document.addEventListener("DOMContentLoaded", async () => {
-  const lang = localStorage.getItem("lang") || "en";
-  await changeLang(lang);
+  await changeLang(currentLang);
 });
