@@ -110,6 +110,88 @@
   "contactLoading": "Sending your message...",
   "contactSuccess": "Your message has been sent successfully. We will get back to you shortly.",
   "contactSend": "Send Message",
+  "serviceDetailsTitle": "Service Details",
+  "serviceDetailsSubtitle": "Comprehensive financial and advisory solutions tailored for your business growth.",
+  "home": "Home",
+  "core1": "Financial Outsourcing",
+  "core2": "CFO & Strategic Finance Advisory",
+  "core3": "Deals & Investment Advisory",
+  "core4": "Internal Audit & Risk Advisory",
+  "core5": "Financial Systems & ERP Consulting",
+
+  "targetIndustriesTitle": "Target Industries",
+  "targetIndustriesDesc": "We serve startups, technology firms, trading companies, manufacturing businesses, service providers, investment firms, and family businesses.",
+
+  "mainServiceTitle": "End-to-End Financial & Advisory Services",
+  "mainServiceDesc": "We provide integrated financial solutions covering outsourcing, strategic advisory, investment support, risk management, and ERP consulting.",
+
+  "feature1": "Accounting, reporting, payroll, and compliance services",
+  "feature2": "Financial strategy, budgeting, and performance monitoring",
+  "feature3": "Business valuation, due diligence, and investment readiness",
+
+  "extraDesc1": "Our internal audit and risk advisory services help organizations strengthen governance, improve controls, and manage risks effectively.",
+  "extraDesc2": "We also support ERP implementation, financial systems setup, and advanced business intelligence reporting.",
+  "financial": {
+      "title": "Financial Outsourcing",
+      "desc": "We provide complete financial outsourcing services covering all operational finance needs.",
+      "items": [
+        "Accounting & Bookkeeping",
+        "Financial Reporting",
+        "Accounts Payable & Receivable",
+        "Payroll Processing",
+        "Financial Compliance",
+        "Financial Policies & Procedures"
+      ]
+    },
+
+    "cfo": {
+      "title": "CFO & Strategic Finance Advisory",
+      "desc": "Strategic financial leadership to support business growth and decision-making.",
+      "items": [
+        "Financial Strategy",
+        "Budgeting & Forecasting",
+        "Cash Flow Planning",
+        "Profitability Analysis",
+        "Business Performance Monitoring",
+        "Financial Restructuring"
+      ]
+    },
+
+    "investment": {
+      "title": "Investment & Deals Advisory",
+      "desc": "Supporting businesses through investment readiness and deal execution.",
+      "items": [
+        "Business Valuation",
+        "Financial Due Diligence",
+        "Investment Readiness",
+        "Mergers & Acquisitions Support",
+        "Investor Reporting"
+      ]
+    },
+
+    "audit": {
+      "title": "Internal Audit & Risk Advisory",
+      "desc": "Enhancing governance and minimizing risks through structured controls.",
+      "items": [
+        "Internal Audit Services",
+        "Risk Assessment",
+        "Internal Control Design",
+        "Corporate Governance Advisory"
+      ]
+    },
+
+    "erp": {
+      "title": "Financial Systems & ERP Consulting",
+      "desc": "Implementing modern financial systems to improve efficiency and insights.",
+      "items": [
+        "ERP Implementation Support",
+        "Accounting System Setup",
+        "Financial Dashboards",
+        "Business Intelligence Reporting"
+      ]
+    }
+
+  
   
   "Protofolio-key":"Protofolio"
 
