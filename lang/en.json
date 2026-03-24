@@ -2,6 +2,11 @@
   "title": "E.M.Y Financial Source Consulting Services",
   "site-name" : "E.M.Y",
   "plan-key": "E.M.Y Financial Source Consulting Services",
+  "Home-key":"Home",
+  "About-key":"About US",
+  "Services-key":"Services",
+  "Team-key":"Team",
+  "Contact-key":"Contact",
   "description":"Strategic Financial Solutions for Modern Businesses",
   "introduction1":"E.M.Y Financial Source Consulting Services is a professional financial consulting and outsourcing firm ",
    "introduction2":"E.M.Y Financial Source Consulting Services is a professional financial consulting and outsourcing firm that provides integrated financial, accounting, and strategic advisory services for businesses.",
@@ -191,9 +196,6 @@
   "team-page":"Our Team",
   "contact-page":"Contact Us",
   "get-started-link":"Know More"
-
-
-
 
 
 }
