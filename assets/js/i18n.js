@@ -1,17 +1,18 @@
 let translations = {};
 let currentLang = localStorage.getItem("lang") || "en";
+console.log(currentLang)
 let currentService = "financial";
 
 // 🔥 Load translations
 async function loadTranslations(lang) {
-  const response = await fetch(`lang/${currentLang}.json`);
+  const response = await fetch(`lang/${lang}.json`);
   translations = await response.json();
 }
 
 // 🔥 Render service
 function renderService(serviceKey) {
   const data = translations[serviceKey];
-  if (!data) return;
+  if ( !document.getElementById("service-title")) return;
 
   document.getElementById("service-title").textContent = data.title;
   document.getElementById("service-desc").textContent = data.desc;
@@ -53,15 +54,16 @@ function applyTranslations() {
 function updateLangUI() {
   const flag = document.getElementById("lang-flag");
   if (!flag) return;
-
   flag.src = currentLang === "ar"
-    ? "assets/img/flags/ksa.png"
-    : "assets/img/flags/uk.png";
+    ? "assets/img/flags/uk.png"
+    : "assets/img/flags/ksa.png";
 }
 
 // 🔥 Change language
 async function changeLang(lang) {
   currentLang = lang;
+  console.log(lang)
+
   localStorage.setItem("lang", lang);
 
   await loadTranslations(lang);
@@ -75,17 +77,18 @@ async function changeLang(lang) {
 
   // RTL
   document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
   document.body.dir = (lang === "ar") ? "rtl" : "ltr";
   document.body.classList.toggle("arabic", lang === "ar");
 
-// 🔥 close mobile menu (important for Dewi)
-document.body.classList.remove("mobile-nav-active");
+  // 🔥 close mobile menu (important for Dewi)
+  document.body.classList.remove("mobile-nav-active");
 
-const toggleIcon = document.querySelector(".mobile-nav-toggle");
-if (toggleIcon) {
-  toggleIcon.classList.remove("bi-x");
-  toggleIcon.classList.add("bi-list");
-}
+  const toggleIcon = document.querySelector(".mobile-nav-toggle");
+  if (toggleIcon) {
+    toggleIcon.classList.remove("bi-x");
+    toggleIcon.classList.add("bi-list");
+  }
 }
 
 // 🔥 Toggle button
@@ -102,3 +105,4 @@ document.addEventListener("click", function (e) {
 document.addEventListener("DOMContentLoaded", async () => {
   await changeLang(currentLang);
 });
+

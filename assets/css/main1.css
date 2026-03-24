@@ -235,6 +235,7 @@ h6 {
 .header .logo {
   line-height: 1;
   margin-inline-end: auto;
+
 }
 
 .header .logo img {
@@ -248,7 +249,35 @@ h6 {
   font-weight: 700;
   color: var(--heading-color);
 }
+/* RTL Support for Header */
+[dir="rtl"] .header .container-fluid {
+  flex-direction: row-reverse;
+}
 
+[dir="rtl"] .navmenu ul {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navmenu {
+  margin-right: auto;
+  margin-left: unset;
+}
+
+[dir="rtl"] .logo {
+  margin-left: auto;
+  margin-right: unset;
+}
+
+[dir="rtl"] .cta-btn {
+  margin-left: unset;
+  margin-right: auto;
+}
+
+/* Mobile nav toggle position */
+[dir="rtl"] .mobile-nav-toggle {
+  left: 20px;
+  right: unset;
+}
 .header .cta-btn,
 .header .cta-btn:focus {
   color: var(--contrast-color);
@@ -293,7 +322,167 @@ h6 {
 .scrolled .header {
   --background-color: rgba(21, 34, 43, 0.85);
 }
+/* =============================================================
+   RTL — Full overrides (index.html + service-details.html)
+   ============================================================= */
 
+/* --- Arabic font for RTL --- */
+html[dir="rtl"] body {
+  font-family: "Cairo", "Tajawal", var(--default-font);
+}
+
+/* --- Header / Navbar --- */
+html[dir="rtl"] #header .container-fluid,
+html[dir="rtl"] .header .container-fluid {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .header .logo {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+html[dir="rtl"] .header .logo img {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+html[dir="rtl"] .header .cta-btn,
+html[dir="rtl"] .header .cta-btn:focus {
+  margin: 0 30px 0 0;
+}
+
+/* --- Desktop nav menu --- */
+@media (min-width: 1200px) {
+  html[dir="rtl"] .navmenu ul {
+    flex-direction: row-reverse;
+  }
+
+  /* Dropdown arrow icon spacing */
+  html[dir="rtl"] .navmenu a i,
+  html[dir="rtl"] .navmenu a:focus i {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+
+  /* Active underline: anchor to right instead of left */
+  html[dir="rtl"] .navmenu > ul > li > a:before {
+    left: auto;
+    right: 0;
+  }
+
+  /* Dropdown panel: open from right side */
+  html[dir="rtl"] .navmenu .dropdown ul {
+    left: auto;
+    right: 14px;
+  }
+
+  /* Nested dropdown: flip to opposite side */
+  html[dir="rtl"] .navmenu .dropdown .dropdown ul {
+    left: auto;
+    right: -90%;
+  }
+
+  html[dir="rtl"] .navmenu .dropdown .dropdown:hover > ul {
+    left: auto;
+    right: -100%;
+  }
+}
+
+/* --- Mobile nav --- */
+@media (max-width: 1199px) {
+  /* Hamburger toggle: move to left side in RTL */
+  html[dir="rtl"] .mobile-nav-toggle {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+
+  html[dir="rtl"] .mobile-nav-active .mobile-nav-toggle {
+    right: auto;
+    left: 15px;
+  }
+
+  /* Mobile menu items: align text right */
+  html[dir="rtl"] .navmenu a,
+  html[dir="rtl"] .navmenu a:focus {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  html[dir="rtl"] .navmenu a i,
+  html[dir="rtl"] .navmenu a:focus i {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+}
+
+/* --- Footer --- */
+html[dir="rtl"] .footer .footer-about .logo img {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+html[dir="rtl"] .footer .social-links a {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+html[dir="rtl"] .footer .footer-links ul i {
+  padding-right: 0;
+  padding-left: 3px;
+}
+
+/* --- Scroll-top button: keep on left in RTL --- */
+html[dir="rtl"] .scroll-top {
+  right: auto;
+  left: 15px;
+}
+
+/* --- Service Details page (service-details.html) --- */
+
+/* Sidebar service list: flip border from left to right */
+html[dir="rtl"] .service-details .services-list a {
+  padding-left: 0;
+  padding-right: 15px;
+  border-left: none;
+  border-right: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  text-align: right;
+}
+
+html[dir="rtl"] .service-details .services-list a.active,
+html[dir="rtl"] .service-details .services-list a:hover {
+  border-right-color: var(--accent-color);
+  border-left: none;
+}
+
+/* Checklist icon: flip margin */
+html[dir="rtl"] .service-details ul i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Align service detail list items to the right */
+html[dir="rtl"] .service-details ul li {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Team member h4 underline: flip to right */
+html[dir="rtl"] .team .member h4::after {
+  left: auto;
+  right: 0;
+}
+
+/* Contact breadcrumb separator spacing */
+html[dir="rtl"] .page-title .breadcrumbs ol li + li {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+html[dir="rtl"] .page-title .breadcrumbs ol li + li::before {
+  padding-right: 0;
+  padding-left: 10px;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -519,7 +708,6 @@ h6 {
     background-color: var(--nav-dropdown-background-color);
     transition: all 0.5s ease-in-out;
   }
-
   .navmenu .dropdown ul ul {
     background-color: rgba(33, 37, 41, 0.1);
   }
@@ -1753,6 +1941,14 @@ section,
   padding: 0;
   font-size: 15px;
 }
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
 
 .portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
@@ -1840,191 +2036,38 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Lang Button
---------------------------------------------------------------*/
-.lang-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-}
-
-/*--------------------------------------------------------------
-# Starter Section
+# Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
 }
 
-/* =============================================================
-   RTL — Full overrides (index.html + service-details.html)
-   ============================================================= */
-
-/* --- Arabic font for RTL --- */
-html[dir="rtl"] body {
-  font-family: "Cairo", "Tajawal", var(--default-font);
-}
-
-/* --- Header / Navbar --- */
-html[dir="rtl"] #header .container-fluid,
-html[dir="rtl"] .header .container-fluid {
+/* RTL Support for Header */
+[dir="rtl"] .header .container-fluid {
   flex-direction: row-reverse;
 }
 
-html[dir="rtl"] .header .logo {
-  margin-inline-end: 0 !important;
-  margin-inline-start: auto !important;
-}
-
-html[dir="rtl"] .header .logo img {
-  margin-right: 0;
-  margin-left: 8px;
-}
-
-html[dir="rtl"] .header .cta-btn,
-html[dir="rtl"] .header .cta-btn:focus {
-  margin: 0 30px 0 0;
-}
-
-/* --- Desktop nav menu --- */
-@media (min-width: 1200px) {
-  html[dir="rtl"] .navmenu ul {
-    flex-direction: row-reverse;
-  }
-
-  /* last item padding: flip from right to left */
-  html[dir="rtl"] .navmenu > ul > li:last-child {
-    padding-right: 14px;
-    padding-left: 0;
-  }
-
-  /* Dropdown arrow icon spacing */
-  html[dir="rtl"] .navmenu a i,
-  html[dir="rtl"] .navmenu a:focus i {
-    margin-left: 0;
-    margin-right: 5px;
-  }
-
-  /* Active underline: anchor to right instead of left */
-  html[dir="rtl"] .navmenu > ul > li > a:before {
-    left: auto;
-    right: 0;
-  }
-
-  /* Dropdown panel: open from right side */
-  html[dir="rtl"] .navmenu .dropdown ul {
-    left: auto;
-    right: 14px;
-  }
-
-  /* Nested dropdown: flip to opposite side */
-  html[dir="rtl"] .navmenu .dropdown .dropdown ul {
-    left: auto;
-    right: -90%;
-  }
-
-  html[dir="rtl"] .navmenu .dropdown .dropdown:hover > ul {
-    left: auto;
-    right: -100%;
-  }
-}
-
-/* --- Mobile nav --- */
-@media (max-width: 1199px) {
-  /* Hamburger toggle: move to left side in RTL */
-  html[dir="rtl"] .mobile-nav-toggle {
-    margin-right: 0;
-    margin-left: 10px;
-    order: 3;
-  }
-
-  html[dir="rtl"] .mobile-nav-active .mobile-nav-toggle {
-    right: auto;
-    left: 15px;
-  }
-
-  /* Mobile menu items: align text right */
-  html[dir="rtl"] .navmenu a,
-  html[dir="rtl"] .navmenu a:focus {
-    flex-direction: row-reverse;
-    text-align: right;
-  }
-
-  html[dir="rtl"] .navmenu a i,
-  html[dir="rtl"] .navmenu a:focus i {
-    margin-left: 0;
-    margin-right: 5px;
-  }
-
-  /* CTA button: flip margin for mobile */
-  html[dir="rtl"] .header .cta-btn {
-    margin: 0 0 0 15px;
-    order: 2;
-  }
-}
-
-/* --- Footer --- */
-html[dir="rtl"] .footer .footer-about .logo img {
-  margin-right: 0;
-  margin-left: 6px;
-}
-
-html[dir="rtl"] .footer .social-links a {
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-html[dir="rtl"] .footer .footer-links ul i {
-  padding-right: 0;
-  padding-left: 3px;
-}
-
-/* --- Scroll-top button: keep on left in RTL --- */
-html[dir="rtl"] .scroll-top {
-  right: auto;
-  left: 15px;
-}
-
-/* --- Service Details page --- */
-html[dir="rtl"] .service-details .services-list a {
-  padding-left: 0;
-  padding-right: 15px;
-  border-left: none;
-  border-right: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  text-align: right;
-}
-
-html[dir="rtl"] .service-details .services-list a.active,
-html[dir="rtl"] .service-details .services-list a:hover {
-  border-right-color: var(--accent-color);
-  border-left: none;
-}
-
-html[dir="rtl"] .service-details ul i {
-  margin-right: 0;
-  margin-left: 8px;
-}
-
-html[dir="rtl"] .service-details ul li {
+[dir="rtl"] .navmenu ul {
   flex-direction: row-reverse;
-  justify-content: flex-end;
 }
 
-/* --- Team --- */
-html[dir="rtl"] .team .member h4::after {
-  left: auto;
-  right: 0;
+[dir="rtl"] .navmenu {
+  margin-right: auto;
+  margin-left: unset;
 }
 
-/* --- Breadcrumbs --- */
-html[dir="rtl"] .page-title .breadcrumbs ol li + li {
-  padding-left: 0;
-  padding-right: 10px;
+[dir="rtl"] .logo {
+  margin-left: auto;
+  margin-right: unset;
 }
 
-html[dir="rtl"] .page-title .breadcrumbs ol li + li::before {
-  padding-right: 0;
-  padding-left: 10px;
+[dir="rtl"] .cta-btn {
+  margin-left: unset;
+  margin-right: auto;
+}
+
+/* Mobile nav toggle position */
+[dir="rtl"] .mobile-nav-toggle {
+  left: 20px;
+  right: unset;
 }

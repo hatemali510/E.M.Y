@@ -38,45 +38,35 @@
 
 <body class="service-details-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
+<a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Dewi</h1>
+        <h1 class="sitename" data-i18n="site-name"></h1>
       </a>
 
-       <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#team">Team</a></li>
+          <li><a href="#hero" class="active" data-i18n="home-page"></a></li>
+          <li><a href="#about"  data-i18n="about-page"></a></li>
+          <li><a href="#services"  data-i18n="services-page"></a></li>
+          <li><a href="#team"  data-i18n="team-page"></a></li>
         
-          <li><a href="#contact">Contact</a></li>
-          <li class="dropdown">
-            <span id="current-lang">
-              <img src="assets/img/flags/uk.png" width="20">
-            </span>
-           <ul>
-  <li>
-    <a href="#" class="lang-btn" data-lang="en">
-      <img src="assets/img/flags/uk.png" width="20"> English
-    </a>
-  </li>
-  <li>
-    <a href="#" class="lang-btn" data-lang="ar">
-      <img src="assets/img/flags/ksa.png" width="20"> العربية
-    </a>
-  </li>
-</ul>
-          </li>
+          <li><a href="#contact"  data-i18n="contact-page"></a></li>
+          <li> <button id="lang-toggle" class="lang-btn">
+            <img id="lang-flag" src="assets/img/flags/uk.png" width="25">
+        </button>
+      </li>
+
+         
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="cta-btn" href="index.html#about">Get Started</a>
+      <a class="cta-btn" href="index.html#about"  data-i18n="get-started-link"></a>
 
+    
     </div>
   </header>
 

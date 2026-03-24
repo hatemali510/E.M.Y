@@ -184,11 +184,13 @@
         "Financial Dashboards",
         "Business Intelligence Reporting"
       ]
-    }
-
-  
-  
-
+    },
+    "home-page" :"Home",
+  "about-page":"About us",
+  "services-page":"Services",
+  "team-page":"Our Team",
+  "contact-page":"Contact Us",
+  "get-started-link":"Know More"
 
 
 
